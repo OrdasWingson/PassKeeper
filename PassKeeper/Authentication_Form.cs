@@ -24,7 +24,7 @@ namespace PassKeeper
         public static string logAccount = string.Empty;
         public Authentication_Form()
         {
-            InitializeComponent();            
+            InitializeComponent();                      
         }
 
         private void button_Registration_Click(object sender, EventArgs e)
@@ -66,27 +66,26 @@ namespace PassKeeper
                             
                         }                       
                         myReader.Close();
-                        connection.Close();
+                        
 
                         if(passDB.Equals(password))
                         {
                             keyWord = textBox_Password.Text;
                             logAccount = textBox_Login.Text;
-                            MessageBox.Show("Acsess granted");
                             KeeperForm keeperForm = new KeeperForm();
                             keeperForm.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Acsess denade");
+                            MessageBox.Show("Не верный логин или пароль.");
                         }
                         
                     }
                 }            
             }
-            finally
+            catch
             {
-                
+                MessageBox.Show("Сбой работы базы данных.");
             }
         }
 
@@ -116,6 +115,21 @@ namespace PassKeeper
                 }
             }
                
+        }
+
+
+       
+
+        private void textBox_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button_Enter_Click(sender, e);
+        }
+
+        private void textBox_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button_Enter_Click(sender,e);
         }
     }
 }

@@ -70,6 +70,7 @@
             this.textBox_Login.Name = "textBox_Login";
             this.textBox_Login.Size = new System.Drawing.Size(233, 20);
             this.textBox_Login.TabIndex = 3;
+            this.textBox_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Login_KeyDown);
             // 
             // textBox_Password
             // 
@@ -77,6 +78,7 @@
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(233, 20);
             this.textBox_Password.TabIndex = 4;
+            this.textBox_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Password_KeyDown);
             // 
             // button_Registration
             // 
