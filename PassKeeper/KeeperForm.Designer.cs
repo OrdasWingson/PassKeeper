@@ -32,7 +32,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column_Syte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Added = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_Status = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,18 +49,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.timerStatus = new System.Windows.Forms.Timer(this.components);
-            this.Column_Syte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Added = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -95,9 +96,41 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Column_Syte
+            // 
+            this.Column_Syte.HeaderText = "Сайт";
+            this.Column_Syte.Name = "Column_Syte";
+            this.Column_Syte.ReadOnly = true;
+            // 
+            // Column_Login
+            // 
+            this.Column_Login.HeaderText = "Логин";
+            this.Column_Login.Name = "Column_Login";
+            this.Column_Login.ReadOnly = true;
+            this.Column_Login.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Login.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_Login.Width = 110;
+            // 
+            // Column_Password
+            // 
+            this.Column_Password.HeaderText = "Пароль";
+            this.Column_Password.Name = "Column_Password";
+            this.Column_Password.ReadOnly = true;
+            this.Column_Password.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Password.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_Password.Width = 115;
+            // 
+            // Column_Added
+            // 
+            this.Column_Added.HeaderText = "Дата добавления";
+            this.Column_Added.Name = "Column_Added";
+            this.Column_Added.ReadOnly = true;
+            this.Column_Added.Width = 75;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
@@ -113,6 +146,16 @@
             this.tabPage2.Size = new System.Drawing.Size(410, 267);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ДОБАВИТЬ ПАРОЛЬ";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label_Status);
+            this.groupBox1.Location = new System.Drawing.Point(14, 173);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(187, 76);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Статус";
             // 
             // label_Status
             // 
@@ -202,50 +245,19 @@
             this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label_Status);
-            this.groupBox1.Location = new System.Drawing.Point(14, 173);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 76);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Статус";
-            // 
             // timerStatus
             // 
             this.timerStatus.Interval = 4000;
             // 
-            // Column_Syte
+            // button1
             // 
-            this.Column_Syte.HeaderText = "Сайт";
-            this.Column_Syte.Name = "Column_Syte";
-            this.Column_Syte.ReadOnly = true;
-            // 
-            // Column_Login
-            // 
-            this.Column_Login.HeaderText = "Логин";
-            this.Column_Login.Name = "Column_Login";
-            this.Column_Login.ReadOnly = true;
-            this.Column_Login.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Login.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column_Login.Width = 110;
-            // 
-            // Column_Password
-            // 
-            this.Column_Password.HeaderText = "Пароль";
-            this.Column_Password.Name = "Column_Password";
-            this.Column_Password.ReadOnly = true;
-            this.Column_Password.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Password.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column_Password.Width = 115;
-            // 
-            // Column_Added
-            // 
-            this.Column_Added.HeaderText = "Дата добавления";
-            this.Column_Added.Name = "Column_Added";
-            this.Column_Added.ReadOnly = true;
-            this.Column_Added.Width = 75;
+            this.button1.Location = new System.Drawing.Point(273, 158);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // KeeperForm
             // 
@@ -264,9 +276,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +307,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Login;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Added;
+        private System.Windows.Forms.Button button1;
     }
 }
