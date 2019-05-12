@@ -19,20 +19,14 @@ namespace PassKeeper
     {
         
         private SQLiteCommand db_sqlCmd;
-        public static string dbFileName = "KeeperDB.pkdb";
-        public static string keyWord = string.Empty;
-        public static string logAccount = string.Empty;
+        public static string dbFileName = "KeeperDB.pkdb";//имя базы данных
+        public static string keyWord = string.Empty; // пароль
+        public static string logAccount = string.Empty; // имя пользователя
         public Authentication_Form()
         {
-            InitializeComponent();                      
+            InitializeComponent();      
         }
-
-        private void button_Registration_Click(object sender, EventArgs e)
-        {
-            NewUserForm newUserForm = new NewUserForm();
-            newUserForm.Show();
-            this.Hide();
-        }
+       
 
         private void button_Enter_Click(object sender, EventArgs e)
         {
@@ -72,8 +66,12 @@ namespace PassKeeper
                         {
                             keyWord = textBox_Password.Text;
                             logAccount = textBox_Login.Text;
+                            textBox_Password.Text = "";
                             KeeperForm keeperForm = new KeeperForm();
+                            keeperForm.Left = this.Left; // задаём открываемой форме позицию слева равную позиции текущей формы
+                            keeperForm.Top = this.Top; ; // задаём открываемой форме позицию сверху равную позиции текущей формы
                             keeperForm.Show();
+                            this.Hide();
                         }
                         else
                         {
@@ -130,6 +128,32 @@ namespace PassKeeper
         {
             if (e.KeyCode == Keys.Enter)
                 button_Enter_Click(sender,e);
+        }
+
+        private void Authentication_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Authentication_Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.Capture = false;
+            Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+            this.WndProc(ref m);
+        }
+
+        private void button_regestration_Click(object sender, EventArgs e)
+        {
+            NewUserForm newUserForm = new NewUserForm();
+            newUserForm.Left = this.Left; // задаём открываемой форме позицию слева равную позиции текущей формы
+            newUserForm.Top = Top; // задаём открываемой форме позицию сверху равную позиции текущей формы
+            newUserForm.Show();
+            this.Hide();
+        }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
